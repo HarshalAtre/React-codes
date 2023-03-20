@@ -1,0 +1,32 @@
+1.usestate hooks-->holds the data
+-->Returns array of two elements
+-->const [menuData,setMenuData]=React.useState(Menu)
+--> hooks are first in funtion , we cant write it under return
+--> data in Menu will be get copied in menuData and we can change its value by changing in setMenuData 
+
+2. { menuData.map((currEle)=>{
+    return(our jsx)}
+--> currEle.id,currEle.name etc can be used in jsx to use as a for loop
+--> we have to pass key
+
+3.onClick={()=>all()} in attribute for events (calling 'all' function on click)
+-->const uniqueList=[...new Set(Menu.map((curElem)=>{
+return curElem.category;
+ }))];
+--> new Set provides unique values only
+--> ...(spread operator)
+
+4.Destructuring , const {id,name,category,image,description}=currEle;
+--> curEle.id,curEle.name,etc can be simply replace by id , name , etc
+
+5.The useEffect Hook allows you to perform side effects in your components.
+-->useEffect(()=>{
+        console.log("Hii");
+    })
+--> now whenever website reloads or any button is clicked the "Hii" is logged in 
+-->useEffect(()=>{
+        console.log("Hii");
+    },[]) Now array dependency is added means now "Hii" will logged only when website is reloaded not on any button click or anything
+-->  useEffect(()=>{
+        document.title=`Chats(${myNum})`
+    }) Now in title we can see Chat(0) and increase with every button click
